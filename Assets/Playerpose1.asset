@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: Playerpose1
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: j_hukuue
+    localPosition: {x: -0.65, y: -0.55, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.70710677, w: 0.7071069}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukuue/j_atama
+    localPosition: {x: 1.4300069, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.0000000833631, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukuue/j_atama/j_kami
+    localPosition: {x: 0.01, y: 0.33, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.97566235, w: -0.21927856}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukuue/j_hidarisode
+    localPosition: {x: 1.0013684, y: -0.17952377, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.9747424, w: 0.22333221}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukuue/j_hidarisode/j_hidariude
+    localPosition: {x: 0.5674636, y: 0.0000000012526016, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.01166835, w: 0.99993193}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukuue/j_migisode
+    localPosition: {x: 1.0900002, y: 0.4000001, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.98525983, w: -0.17106465}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukuue/j_migisode/j_migiude
+    localPosition: {x: 0.6453681, y: -0.000000059604645, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.2170119, w: 0.976169}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukuue/j_hidarisode2
+    localPosition: {x: 1.0900002, y: -0.30999994, z: 0}
+    localRotation: {x: -0, y: -0, z: -0.98045397, w: -0.1967487}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukuue/j_hidarisode2/j_hidariude2
+    localPosition: {x: 0.59615463, y: 0, z: 0}
+    localRotation: {x: 0, y: -0, z: 0.7970244, w: 0.60394704}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukuue/j_migisode2
+    localPosition: {x: 0.9700002, y: 0.5899998, z: 0}
+    localRotation: {x: -0, y: -0, z: -0.92576265, w: -0.37810525}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukuue/j_migisode2/j_migiude2
+    localPosition: {x: 0.7142131, y: -0.000000059604645, z: 0}
+    localRotation: {x: 0, y: -0, z: 0.9004431, w: 0.43497387}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukusita
+    localPosition: {x: -0.72, y: -0.7, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukusita/j_hukusitahidari
+    localPosition: {x: 0, y: 0.34000006, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.051493715, w: 0.9986734}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hukusita/j_hukusitamigi
+    localPosition: {x: 0, y: -0.31999996, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.02779911, w: 0.9996135}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hidariasiue
+    localPosition: {x: -0.56113845, y: -0.84155864, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.67338216, w: 0.7392946}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hidariasiue/j_hidariasisita
+    localPosition: {x: 0.90273076, y: -0.0061188936, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.27658805, w: 0.9609886}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_hidariasiue/j_hidariasisita/j_hidarikutu
+    localPosition: {x: 1.0551836, y: -0.08396885, z: 0}
+    localRotation: {x: -0, y: -0, z: 0.65934587, w: 0.7518398}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_migiasiue
+    localPosition: {x: -0.9441323, y: -0.8396159, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.6874115, w: 0.7262682}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_migiasiue/j_migiasisita
+    localPosition: {x: 0.87618625, y: -0.017323911, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.07324588, w: 0.9973139}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: j_migiasiue/j_migiasisita/j_migiasikutu
+    localPosition: {x: 1.1030062, y: -0.10330995, z: 0}
+    localRotation: {x: -0, y: -0, z: 0.70710677, w: 0.7071068}
+    localScale: {x: 1, y: 1, z: 1}

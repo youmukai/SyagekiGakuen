@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141b4769e7dec7d4193b11322391023e, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  name: buki
+  probability: 3
+  cards:
+  - kenju
+  - rifle
+  - itijiteki
+  sprite1: {fileID: 21300000, guid: b8beb3676d2824542918208c7ed62be2, type: 3}
+  gatyaitem: {fileID: 1083493180898712, guid: 6dc994976aece9440b59dadbf92042b1, type: 2}
+  gachaItem:
+  - {fileID: 1083493180898712, guid: 6dc994976aece9440b59dadbf92042b1, type: 2}
+  - {fileID: 1617089536379436, guid: ebdd38a780669904a81be8b24402bca3, type: 2}
+  - {fileID: 1542313671421434, guid: 0acd4cbfbcd86554989b935486126e0a, type: 2}
+  gachaItem2:
+  - {fileID: 21300000, guid: 8b14c833785aa624a855918ce855c57a, type: 3}
+  - {fileID: 21300000, guid: a7e5b9fb7d3e1e54d8fd7f3ab58c3554, type: 3}
+  - {fileID: 21300000, guid: 3d4cdcc3c6562b642ab79b69726dc035, type: 3}

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141b4769e7dec7d4193b11322391023e, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  name: SututasUp
+  probability: 97
+  cards:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  sprite1: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  gatyaitem: {fileID: 0}
+  gachaItem:
+  - {fileID: 1366928077434584, guid: 4e1d0d42658c1324ba34fd55a86664da, type: 2}
+  - {fileID: 1532426221601618, guid: 2f311638b611d0149a9ba4ebfc5d4422, type: 2}
+  - {fileID: 1915804105710698, guid: 441de4fe04fabaf48b9ce2bc4116e0f9, type: 2}
+  - {fileID: 1296034398884812, guid: 7664d45739772d54a8a422f4a63124a4, type: 2}
+  - {fileID: 1797626261477854, guid: 232dbd33a0b025146bd1dd0ae6546e7c, type: 2}
+  - {fileID: 1995779877193084, guid: fcb3e42257f439b48bde188c125ac804, type: 2}
+  gachaItem2:
+  - {fileID: 21300000, guid: 3d897193191aa314cb655bbc17293c44, type: 3}
+  - {fileID: 21300000, guid: b7609c191cc93af4db6a4a24b8166cd6, type: 3}
+  - {fileID: 21300000, guid: 886ca6f0e7c5d494fb4ab4b17dbb742c, type: 3}
+  - {fileID: 21300000, guid: 127ad32e033848746b4db96d9af500f1, type: 3}
+  - {fileID: 21300000, guid: 1d8f70d472f2a3a42a31a319950e9aec, type: 3}
+  - {fileID: 21300000, guid: b10fa3eddc7664e48afb60941ecfc8bb, type: 3}
