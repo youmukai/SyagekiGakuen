@@ -43,7 +43,7 @@ public class Player1 : MonoBehaviour {
         handgunRunAttackLayer = animator.GetLayerIndex("HandgunRunAttack Layer");
         rifleAttackLayer= animator.GetLayerIndex("RifleAttack Layer");
         rifleRunLayer = animator.GetLayerIndex("Rifle Layer");
-        goalUI.SetActive(false);
+        //goalUI.SetActive(false);
         hp = GetComponent<HpConfigPlayer>();
         Time.timeScale = 1f;
         //Debug.Log("Base: " + animator.GetLayerIndex("Base Layer"));
@@ -133,16 +133,15 @@ public class Player1 : MonoBehaviour {
         player.transform.position = new Vector3
             (Mathf.Clamp(player.transform.position.x, seigenMaix, seigenPrax), Mathf.Clamp(player.transform.position.y, seigenMaiy, seigenPray), player.transform.position.z);
     }
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if (other.CompareTag("Goal"))
+        if (collision.CompareTag("Goal"))
         {
             //PlayerPrefs.SetInt("stage1Clear", 1);
             CoinGet1 coinGet1 = coinGet.GetComponent<CoinGet1>();
             coinGet1.Save();
         }
-        if (other.CompareTag("Goal"))
+        if (collision.CompareTag("Goal"))
         {
             Debug.Log("goal1");
             goalUI.SetActive(!goalUI.activeSelf);
@@ -153,7 +152,9 @@ public class Player1 : MonoBehaviour {
             //SceneManager.LoadScene("Menu");
             StartCoroutine("HyoujiGoal");
         }
-
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
         if (other.CompareTag("Enemy"))
         {
             //Debug.Log("atari");

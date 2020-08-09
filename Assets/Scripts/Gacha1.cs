@@ -5,20 +5,18 @@ using System.Linq;
 using UnityEngine;
 
 public class Gacha1 : MonoBehaviour {
-    /*[SerializeField] int tes1Incidence;
-    [SerializeField] int tes2Incidence;
-    [SerializeField] int tes3Incidence;
-    string[] tesNames = { "sra", "gobu", "dara" };*/
     private GachaTable[] gachatable = new GachaTable[2];
     private System.Random random;
-    int value = 100;
-    int maxIndex = 2; // 武器、能力アップ(素早さ・攻撃・回避)
-    int countPerPack = 10;
-    //SpriteRenderer mainsprite;
+    int value = 1000; // ガチャの値段
+    int maxIndex = 2; // レアリティの個数(武器、能力アップアイテムで2つ)
+    int countPerPack = 10; // 1回で引ける個数
     Vector3 itemPos = new Vector3(-6, 2, 0);
     Vector3 itemPos2 = new Vector3(-6, -2, 0);
     int itemSize = 5;
     List<GameObject> generatedItem = new List<GameObject>();
+
+    int syojiCoin = 0;
+    public static bool gachahiki = false;
 
     // Use this for initialization
     void Start () {
@@ -27,44 +25,55 @@ public class Gacha1 : MonoBehaviour {
             gachatable[i] = Resources.Load<GachaTable>("GachaTable/" + (i + 1).ToString());
         }
         random = new System.Random((int)DateTime.Now.Ticks);
-        //mainsprite = gameObject.GetComponent<SpriteRenderer>();
-        //packOpen(1000);
-        gachaRen(1000);
+
+        syojiCoin = PlayerPrefs.GetInt("Coin2");
+        if (GachaLotto10.lotto1 == true) // 1回だけ回すとき
+        {
+            if (syojiCoin < 100)
+            {
+                GachaLotto10.lotto1 = false;
+            }
+            else
+            {
+                countPerPack = 1;
+                int hiku = syojiCoin - (100 * countPerPack);
+                PlayerPrefs.SetInt("Coin2", hiku);
+                gachaRen(1000);
+                GachaLotto10.lotto1 = false;
+                gachahiki = true;
+            }
+        }
+        else // 10回連続回すとき
+        {
+            if (syojiCoin < value)
+            {
+                int aq = syojiCoin / 100;
+                countPerPack = aq;
+                //Debug.Log(countPerPack);
+                int hiku1 = syojiCoin - (100 * countPerPack);
+                Debug.Log(hiku1);
+                PlayerPrefs.SetInt("Coin2", hiku1);
+                gachaRen(1000);
+                gachahiki = true;
+            }
+            else // 所持コインが1000より多いなら
+            {
+                int hiku2 = syojiCoin - (100 * countPerPack);
+                //Debug.Log(hiku2);
+                PlayerPrefs.SetInt("Coin2", hiku2);
+                gachaRen(syojiCoin);
+                gachahiki = true;
+            }
+        }
     }
 
     // Update is called once per frame
     void Update () {
 		
 	}
-
-    /*public List<string> packOpen(int money)
-    {
-        List<string> resultList = new List<string>();
-        int totalProbability = 0;
-        if (money < value)
-        {
-            return null;
-        }
-        for(int i = 0; i < maxIndex; i++)
-        {
-            totalProbability += gachatable[i].probability;
-        }
-        resultList = new List<string>();
-        for(int i = 0; i < countPerPack; i++)
-        {
-            string card = getCard(totalProbability);
-            resultList.Add(card);
-        }
-
-        Debug.Log(resultList[0] +","+ resultList[1] + "," + resultList[2] + "," + resultList[3] + "," + resultList[4] +
-            "," + resultList[5] + "," + resultList[6] + "," + resultList[7] + "," + resultList[8] + "," + resultList[9] +
-            "," + "nyusyu");
-
-        return resultList;
-    }*/
     public void gachaRen(int money)
     {
-        //List<Sprite> resultList2 = new List<Sprite>();
+        List<string> resultList = new List<string>();
         int totalProbability2 = 0;
         if (money < value)
         {
@@ -74,39 +83,19 @@ public class Gacha1 : MonoBehaviour {
         {
             totalProbability2 += gachatable[i].probability;
         }
-        //resultList2 = new List<Sprite>();
         for(int i = 0; i < countPerPack; i++)
         {
-            //Sprite item = getGazo(totalProbability2);
             GameObject itemObj = getGazo(totalProbability2);
-            //resultList2.Add(item);
             generatedItem.Add(itemObj);
+            resultList.Add(itemObj.name);
+            GachaTes1.SaveList<string>("ListSaveKey1", resultList);
         }
     }
-    /*private string getCard(int _allProbability)
-    {
-        int randomValue = getRandom(_allProbability);
-        int totalProbability = 0;
-        for(int i = 0; i < maxIndex; i++)
-        {
-            totalProbability += gachatable[i].probability;
-            if (totalProbability >= randomValue)
-            {
-                string id = getRandom(gachatable[i].cards); // cards
-                return id;
-            }
-        }
-        return null;
-    }*/
-    private int getRandom(int _max)
+    private int getRandom(int _max) // 3%のアイテムか97%のアイテムかを決めるレアリティを抽選する
     {
         return random.Next(0, _max);
     }
-    /*private string getRandom(List<string> _list)
-    {
-        return _list[random.Next(0, _list.Count)];
-    }*/
-    private GameObject getRandom2(List<GameObject> list2)
+    private GameObject getRandom2(List<GameObject> list2) // 同じレアリティから個別にアイテムの抽選を行う
     {
         return list2[random.Next(0, list2.Count)];
     }
@@ -121,50 +110,38 @@ public class Gacha1 : MonoBehaviour {
             {
                 for (int j = 0; j < itemSize; j++)
                 {
-
                     if (totalProbability >= randomValue2)
                     {
-                        GameObject id2 = (GameObject)Instantiate(
-                             getRandom2(gachatable[i].gachaItem),
+                        int itemran = random.Next(0, gachatable[i].gachaItem.Count);
+                        var id2 = Instantiate( 
+                            gachatable[i].gachaItem[itemran] as GameObject,
                             itemPos,
                             Quaternion.identity
                             );
+                        id2.name = gachatable[i].gachaItem[itemran].name;
                         itemPos.x += 3;
                         return id2;
                     }
-
                 }
             }
             else // 下段アイテム5個
             {
-                //itemPos.x = -6;
-                //itemPos.y = -2;
                 for (int j2 = 0; j2 < itemSize; j2++)
                 {
-
                     if (totalProbability >= randomValue2)
                     {
+                        int itemran = random.Next(0, gachatable[i].gachaItem.Count);
                         GameObject id2 = (GameObject)Instantiate(
-                             getRandom2(gachatable[i].gachaItem),
+                             gachatable[i].gachaItem[itemran],
                             itemPos2,
                             Quaternion.identity
                             );
+                        id2.name = gachatable[i].gachaItem[itemran].name;
                         itemPos2.x += 3;
                         return id2;
                     }
-
                 }
             }
-            
-            /*if (totalProbability >= randomValue2)
-            {
-                GameObject id2 = (GameObject)Instantiate(
-                     getRandom2(gachatable[i].gachaItem),
-                    itemPos,
-                    Quaternion.identity
-                    );
-                return id2;
-            }*/
         }
         return null;
     }

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c14b16cfd75d4459f2c16708e7f418, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  name: Magnum
+  hyoujiName: "\u30DE\u30B0\u30CA\u30E0\u9283"
+  itemNem: 2
+  ItemGazo: {fileID: 21300000, guid: b8beb3676d2824542918208c7ed62be2, type: 3}
+  revel: 3
+  bun: kihon
+  tikara: 20
+  hayasa: 1.5
+  bunrui: 1

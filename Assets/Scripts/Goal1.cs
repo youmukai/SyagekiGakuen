@@ -5,17 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Goal1 : MonoBehaviour
 {
-
+    bool a1 = false;
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -26,9 +25,7 @@ public class Goal1 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("goal1");
-            //Time.timeScale = 0f;
-            SceneManager.LoadScene("Menu");
-            //StartCoroutine("HyoujiGoal");
+            //goalUI.SetActive(!goalUI.activeSelf);
         }
     }
 }

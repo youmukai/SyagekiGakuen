@@ -9,6 +9,20 @@ public class HpConfigPlayer : MonoBehaviour {
     Rigidbody2D rb;
     float time = 0.0f;
     public GameObject[] effectPre;
+    GameObject equip;
+
+    public void SetHp(int hp)
+    {
+        this.hitPoint = hp;
+    }
+    public int GetHp()
+    {
+        return hitPoint;
+    }
+    public GameObject GetEquip()
+    {
+        return equip;
+    }
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>();

@@ -14,12 +14,12 @@ MonoBehaviour:
   name: SututasUp
   probability: 97
   cards:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
+  - balloons
+  - leaf
+  - grapes
+  - heart
+  - lemon
+  - silhouette
   sprite1: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   gatyaitem: {fileID: 0}
   gachaItem:
