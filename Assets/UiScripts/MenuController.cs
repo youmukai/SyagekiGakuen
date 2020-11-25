@@ -40,6 +40,7 @@ public class MenuController : MonoBehaviour {
         }
         coin.text = "コイン: " + syojiCoin;
         Gacha1.gachahiki = false;
+        ClearController.kidou = false;
         buttonClick = GetComponent<AudioSource>();
         Time.timeScale = 1f;
     }

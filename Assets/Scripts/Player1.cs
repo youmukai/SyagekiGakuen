@@ -130,8 +130,10 @@ public class Player1 : MonoBehaviour {
     }
     public void SeigenArea()
     {
-        player.transform.position = new Vector3
-            (Mathf.Clamp(player.transform.position.x, seigenMaix, seigenPrax), Mathf.Clamp(player.transform.position.y, seigenMaiy, seigenPray), player.transform.position.z);
+        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
+
+        player.transform.position = new Vector3(Mathf.Clamp(
+            player.transform.position.x, seigenMaix + min.x, seigenPrax), Mathf.Clamp(player.transform.position.y, seigenMaiy, seigenPray), player.transform.position.z);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
